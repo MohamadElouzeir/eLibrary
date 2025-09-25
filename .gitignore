@@ -1,2 +1,16 @@
-# Ignore environment variable files
+# Environment secrets
 .env
+
+# Build output
+bin/
+obj/
+
+# Frontend stuff
+node_modules/
+dist/
+
+# IDE files
+.vscode/
+*.user
+*.suo
+*.swp

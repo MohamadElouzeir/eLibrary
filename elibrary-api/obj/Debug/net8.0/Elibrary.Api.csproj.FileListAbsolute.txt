@@ -44,3 +44,5 @@ C:\Users\mozei\Desktop\IDS_Intern\elibrary\elibrary-api\obj\Debug\net8.0\refint\
 C:\Users\mozei\Desktop\IDS_Intern\elibrary\elibrary-api\obj\Debug\net8.0\Elibrary.Api.pdb
 C:\Users\mozei\Desktop\IDS_Intern\elibrary\elibrary-api\obj\Debug\net8.0\Elibrary.Api.genruntimeconfig.cache
 C:\Users\mozei\Desktop\IDS_Intern\elibrary\elibrary-api\obj\Debug\net8.0\ref\Elibrary.Api.dll
+C:\Users\mozei\Desktop\IDS_Intern\elibrary\elibrary-api\bin\Debug\net8.0\dotenv.net.dll
+C:\Users\mozei\Desktop\IDS_Intern\elibrary\elibrary-api\obj\Debug\net8.0\Elibrary.Api.sourcelink.json
