@@ -5,8 +5,11 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using ElibraryApi.Data;
 using ElibraryApi.Services;
+using dotenv.net;
+
 
 var builder = WebApplication.CreateBuilder(args);
+DotEnv.Load(); // this reads .env file into Environment variables
 
 // === Register services BEFORE builder.Build() ===
 builder.Services.AddDbContext<LibraryDbContext>(opts =>
