@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import Verify from './pages/Verify'
+import Verify from './pages/verify'
 import Books from './pages/Books'
 import Profile from './pages/Profile'
 import Admin from './pages/Admin'
