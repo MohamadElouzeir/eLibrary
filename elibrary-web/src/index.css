@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* subtle dotted bg */
+.bg-dots {
+  background-image:
+    radial-gradient(currentColor 1px, transparent 1.5px);
+  background-size: 16px 16px;
+  color: rgba(0,0,0,0.06); /* dot color */
+}
+/* === Dark UI form fixes === */
+
+/* Native <select> dropdown menu colors (when opened) */
+select option {
+  color: #111;              /* make option text dark on white dropdown */
+  background-color: #fff;   /* force white menu so text is readable */
+}
+
+/* WebKit autofill on dark inputs */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: #fff !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255,255,255,0.1) inset !important;
+  transition: background-color 9999s ease-in-out 0s !important;
+}
+
+/* Consistent placeholder on dark backgrounds */
+::placeholder {
+  color: #9ca3af; /* Tailwind gray-400 */
+  opacity: 1;
+}
