@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getCoverUrl } from '../utils/covers'
+import { getCoverUrl } from '../Utils/covers'
 
 type Props = {
   id: number
@@ -17,12 +17,12 @@ export default function BookCard({ id, title, author, available, genres, onBorro
   useEffect(() => {
     let alive = true
     setImgLoading(true)
-    ;(async () => {
-      const url = await getCoverUrl({ title, author })
-      if (!alive) return
-      setImg(url)
-      setImgLoading(false)
-    })()
+      ; (async () => {
+        const url = await getCoverUrl({ title, author })
+        if (!alive) return
+        setImg(url)
+        setImgLoading(false)
+      })()
     return () => { alive = false }
   }, [title, author])
 
@@ -90,9 +90,9 @@ export default function BookCard({ id, title, author, available, genres, onBorro
           <button
             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition
                         ${available > 0
-                          ? 'bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white shadow'
-                          : 'bg-white/10 text-gray-300 cursor-not-allowed border border-white/10'
-                        }`}
+                ? 'bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white shadow'
+                : 'bg-white/10 text-gray-300 cursor-not-allowed border border-white/10'
+              }`}
             onClick={() => available > 0 && onBorrow(id)}
             disabled={available === 0}
           >

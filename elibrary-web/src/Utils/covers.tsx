@@ -1,4 +1,4 @@
-// src/utils/covers.ts
+// src/Utils/covers.ts
 // Fetch cover images at runtime (no downloads) with smart fallbacks + manual overrides.
 
 type BookLite = { title: string; author: string }
@@ -71,7 +71,7 @@ export async function getCoverUrl(b: BookLite): Promise<string | null> {
     const data = await getJSON(`https://openlibrary.org/search.json?q=${q}&limit=1`)
     const url = olCoverFromDoc(data?.docs?.[0], "L") || olCoverFromDoc(data?.docs?.[0], "M")
     if (url) { cache.set(k, url); return url }
-  } catch {}
+  } catch { }
 
   // (2) Open Library: separate title+author
   try {
@@ -80,7 +80,7 @@ export async function getCoverUrl(b: BookLite): Promise<string | null> {
     const data = await getJSON(`https://openlibrary.org/search.json?title=${t}&author=${a}&limit=1`)
     const url = olCoverFromDoc(data?.docs?.[0], "L") || olCoverFromDoc(data?.docs?.[0], "M")
     if (url) { cache.set(k, url); return url }
-  } catch {}
+  } catch { }
 
   // (3) Open Library: title only
   try {
@@ -88,7 +88,7 @@ export async function getCoverUrl(b: BookLite): Promise<string | null> {
     const data = await getJSON(`https://openlibrary.org/search.json?title=${t}&limit=1`)
     const url = olCoverFromDoc(data?.docs?.[0], "L") || olCoverFromDoc(data?.docs?.[0], "M")
     if (url) { cache.set(k, url); return url }
-  } catch {}
+  } catch { }
 
   // (4) Google Books (no key)
   try {
@@ -98,7 +98,7 @@ export async function getCoverUrl(b: BookLite): Promise<string | null> {
     const img = data?.items?.[0]?.volumeInfo?.imageLinks
     const url = (img?.thumbnail || img?.smallThumbnail || null)?.replace(/^http:\/\//, 'https://') ?? null
     if (url) { cache.set(k, url); return url }
-  } catch {}
+  } catch { }
 
   cache.set(k, null)
   return null
