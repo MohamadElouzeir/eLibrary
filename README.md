@@ -11,9 +11,8 @@ Simple eLibrary for internship assignment. Stack: .NET 8 Web API + PostgreSQL + 
 ```bash
 dotnet run --project elibrary-api
 ```
-On first run it creates the DB schema and seeds an admin and a few books.
 
-Swagger: https://localhost:5001/swagger (port may differ, check console).
+Swagger: https://localhost:5001/swagger 
 
 Default admin: `admin / Admin@123`.
 
@@ -29,7 +28,6 @@ Open the shown URL (default http://localhost:5173).
 - JWT tokens expire in ~30 min.
 - All endpoints except auth require login.
 - Borrow reduces availability; return increases it.
-- Code is kept readable with short comments and simple structure.
 
 
 ### Password policy
